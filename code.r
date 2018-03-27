@@ -74,4 +74,6 @@ largeFoo <- bind_rows(
   foo[[46]][[1]],
   foo[[47]][[1]])
 
+#export data as csv
+write_csv(largeFoo,"londonData.csv")
 
