@@ -1,4 +1,8 @@
 
+library(chron)
+
+
+
 #create a list of paginated urls
 baseurl <- 'http://results-2017.virginmoneylondonmarathon.com/2017/?&event=MAS&num_results=1000&pid=search&search%5Bsex%5D=%25&search%5Bnation%5D=%25&search_sort=name'     
 pagenum <- "&page=" 
@@ -11,17 +15,19 @@ resultspage = (resultspage + 1)
 if (resultspage == 47) break } 
 pagelist
 
+foo <- list()
+i <- 1
 #scrapes the data from the list of urls
 for (page in pagelist){ 
-+    dataTable <- read_url%>%
-+     read_html() %>%
-+     html_nodes(xpath='/html/body/div[2]/div[2]/div/div/div[3]/div[5]/div[1]/table') %>%
-+     html_table
-+ 
-+     foo[[i]] <- dataTable
-+     i <- i + 1
-+ }
-
+  dataTable <- page %>%
+    read_html() %>%
+    html_nodes(xpath='/html/body/div[2]/div[2]/div/div/div[3]/div[5]/div[1]/table') %>%
+    html_table
+  print(dataTable)
+  
+  foo[[i]] <- dataTable
+  i <- i + 1
+}
 #returns a list of dataframes
 View(foo)
 #stacks all the dataframes into one large dataframe
@@ -76,4 +82,21 @@ largeFoo <- bind_rows(
 
 #export data as csv
 write_csv(largeFoo,"londonData.csv")
+
+#remove extra columns
+data <- largeFoo[ , !duplicated(colnames(largeFoo))]
+#clean it up 
+data.clean <- data %>%
+  select(`Place overall`, Name, Club, Category, Finish)
+
+data.cleaner <- na.omit(data.clean)
+#rename the dataframe
+londondata <- data.cleaner
+
+
+#convert hours into numeric data
+
+
+
+
 
