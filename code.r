@@ -97,6 +97,9 @@ londondata <- data.cleaner
 #convert hours into numeric data
 
 
+londondata %>%
+    mutate(seconds = period_to_seconds(hms(Finish)))
+
 
 
 
