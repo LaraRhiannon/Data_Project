@@ -100,7 +100,7 @@ londondata %>%
 
 
 #Get String function
-function(mystring, initial.character, final.character)
+getstr = function(mystring, initial.character, final.character)
 { # check that all 3 inputs are character variables
     if (!is.character(mystring))
     {        stop('The parent string must be a character variable.')
