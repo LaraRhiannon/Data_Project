@@ -132,6 +132,36 @@ getstr = function(mystring, initial.character, final.character)
 df <- df %>%
   mutate(Country = getstr(df$Name, '[(]', '[)]'))
 
+#Add categories per time
+df.categorise <- df %>%
+  mutate(timecat = ifelse(seconds %in% 8000:9000, "2:15-2:30",
+                          ifelse(seconds %in% 9001:9900, "2:30-2:45",
+                          ifelse(seconds %in% 9901:10800, "2:45-3:00",
+                          ifelse(seconds %in% 10801:11700, "3:00-3:15",
+                          ifelse(seconds %in% 11701:12600, "3:15-3:30",
+                          ifelse(seconds %in% 12601:13500, "3:30-3:45",
+                          ifelse(seconds %in% 13501:14400, "3:45-4:00",
+                          ifelse(seconds %in% 14401:15300, "4:00-4:15",
+                          ifelse(seconds %in% 15301:16200, "4:15-4:30",
+                          ifelse(seconds %in% 16201:17100, "4:30-4:45",
+                          ifelse(seconds %in% 17101:18000, "4:45-5:00",
+                          ifelse(seconds %in% 18001:18900, "5:00-5:15",
+                          ifelse(seconds %in% 18901:19800, "5:15-5:30",
+                          ifelse(seconds %in% 19801:20700, "5:30-5:45",
+                          ifelse(seconds %in% 20701:21600, "5:45-6:00",
+                          ifelse(seconds %in% 21601:22500, "6:00-6:15",
+                          ifelse(seconds %in% 22501:23400, "6:15-6:30",
+                          ifelse(seconds %in% 23401:24300, "6:30-6:45",
+                          ifelse(seconds %in% 24301:25200, "6:45-7:00",
+                          ifelse(seconds %in% 25201:26100, "7:00-7:15",
+                          ifelse(seconds %in% 26101:27000, "7:15-7:30",
+                          ifelse(seconds %in% 27001:27900, "7:30-7:45",
+                          ifelse(seconds %in% 27901:28800, "7:45-8:00",
+                          ifelse(seconds %in% 28801:29700, "8:00-8:15",
+                          ifelse(seconds %in% 29701:30600, "8:15-8:30",
+                          ifelse(seconds %in% 30601:31500, "8:30-8:45",
+                          ifelse(seconds %in% 31501:32400, "8:45-9:00","9:00+" ))))))))))))))))))))))))))))
+
 #ANALYSIS EXAMPLE
 
 medianAge <- df %>%
