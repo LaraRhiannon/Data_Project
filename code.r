@@ -95,11 +95,52 @@ londondata <- data.cleaner
 
 
 #convert hours into numeric data
-
-
 londondata %>%
     mutate(seconds = period_to_seconds(hms(Finish)))
 
 
+#Get String function
+function(mystring, initial.character, final.character)
+{ # check that all 3 inputs are character variables
+    if (!is.character(mystring))
+    {        stop('The parent string must be a character variable.')
+    }
+    
+    if (!is.character(initial.character))
+    {        stop('The initial character must be a character variable.')
+    }
+    if (!is.character(final.character))
+    {stop('The final character must be a character variable.')
+    }
+    # pre-allocate a vector to store the extracted strings
+    snippet = rep(0, length(mystring))
+    for (i in 1:length(mystring))
+    {
+        # extract the initial position
+        initial.position = gregexpr(initial.character, mystring[i])[[1]][1] + 1       
+        # extract the final position
+        final.position = gregexpr(final.character, mystring[i])[[1]][1] - 1      
+        # extract the substring between the initial and final positions, inclusively
+        snippet[i] = substr(mystring[i], initial.position, final.position)
+    } 
+    return(snippet)
+}
+
+
+#Extract the country codes into a new column
+df <- df %>%
+  mutate(Country = getstr(df$Name, '[(]', '[)]'))
+
+#ANALYSIS EXAMPLE
+
+medianAge <- df %>%
+  group_by(Category) %>%
+  summarise(avg = median(seconds))
+#round the seconds to an integer
+medianAge <- medianAge %>%
+  mutate(time = round(avg))
+#turn seconds back into %H %M %S
+medianAge <- medianAge %>%
+  mutate(Time = seconds_to_period(time))
 
 
