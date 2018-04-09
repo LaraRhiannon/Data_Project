@@ -143,4 +143,25 @@ medianAge <- medianAge %>%
 medianAge <- medianAge %>%
   mutate(Time = seconds_to_period(time))
 
+#COUNTRY 
+
+countryCodes <- read_csv("country-codes.csv")
+df <- df %>%
+   mutate(Country = getstr(df$Name, '[(]', '[)]'))
+#group by country and get average
+medianCountry <- df %>%
+   group_by(Country) %>%
+   summarise(avg = median(seconds))
+medianCountry <- medianCountry %>%
+   mutate(time = round(avg))
+medianCountry <- medianCountry %>%
+  mutate(Time = seconds_to_period(time))
+medianCountry$tally <- df %>% group_by(Country) %>% tally()
+
+#merge with country codes
+countryCodes <- countryCodes %>%
+   select(official_name_en, `ISO3166-1-Alpha-3`)
+ names(countryCodes) <- c("name", "Country")
+ CountryMerge <- merge(medianCountry, countryCodes, by="Country")
+ View(CountryMerge)
 
