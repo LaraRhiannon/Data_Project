@@ -9,3 +9,19 @@
     margin-left: 50px;
     margin-right: 50px;
 }
+.display-3 {
+
+	font-size: 65px;
+	font-weight: 600;
+}
+
+#mapdata {
+    height: 600px; 
+    width: 800px; 
+    margin: 0 auto; 
+}
+.loading {
+    margin-top: 10em;
+    text-align: center;
+    color: gray;
+}
