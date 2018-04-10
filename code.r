@@ -196,3 +196,23 @@ countryCodes <- countryCodes %>%
  CountryMerge <- merge(medianCountry, countryCodes, by="Country")
  View(CountryMerge)
 
+
+#ggplotting example
+#get the information we need
+graph70 <- df.categorise %>%
+  filter(Category == "70+") %>% group_by(timecat) %>% tally()
+#set text style
+header.text <- element_text(face = "bold", hjust = 0.5, size= 16)
+axisTitle <- element_text(face= "bold")
+italicCaption <- element_text(face = "italic", angle = 45, vjust=1)
+#plot the graph
+plot70 <- graph70 %>% 
+  ggplot(aes(x=timecat, y=n, fill = n)) + 
+  geom_bar(stat = "identity") +
+  labs(title ="70+", x = "Time", y = "Runners") +
+  theme(plot.title = header.text, axis.text.x = italicCaption, axis.title = axisTitle) 
+plot(plot70)
+
+
+
+
