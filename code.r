@@ -201,6 +201,12 @@ countryCodes <- countryCodes %>%
 #get the information we need
 graph70 <- df.categorise %>%
   filter(Category == "70+") %>% group_by(timecat) %>% tally()
+
+#add missing categories that = 0 example
+graph4549 <- rbind(graph4549, c("9:00+", 0))
+#transform to numeric
+graph4549$n <- as.numeric(as.character(graph4549$n))
+
 #set text style
 header.text <- element_text(face = "bold", hjust = 0.5, size= 16)
 axisTitle <- element_text(face= "bold")
