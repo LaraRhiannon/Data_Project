@@ -117,7 +117,7 @@ var timedata = [
   ["um","1"  ],
   ["us","655"  ],
   ["ve","5"  ]
-]
+];
 
 
 Highcharts.mapChart('mapdata', {
@@ -287,7 +287,7 @@ if(age == "3") {
     document.getElementById("all").className = "hidden";
    }
 
-}
+};
 
 // Get the modal
 var modal = document.getElementById('myModal');
@@ -313,7 +313,7 @@ window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
-} 
+} ;
 
 
 
@@ -439,12 +439,12 @@ var slowbtn = document.getElementById("slow");
 fastbtn.onclick = function() {
      document.getElementById("countryspeed").className = "show";
     document.getElementById("countryslow").className = "hidden";
-}
+};
 
 slowbtn.onclick = function() {
     document.getElementById("countryslow").className = "show";
     document.getElementById("countryspeed").className = "hidden";
-}
+};
 
 
 
