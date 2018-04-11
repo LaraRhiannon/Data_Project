@@ -28,7 +28,7 @@
                                 <div id="container" style="height: 700px; max-width: 800px; margin-left: 230px; margin-top: 50px"></div>
 
                                 <hr class="my-4">
-                                <p>Data from the 2017 London Marathon results reveal that veteran runners might have an advantage over youth.</p>
+                                <p>Veteran runners may well have some advantage over the youth of the marathon.</p>
 
 <p>The data reveals that, on average, 40-44 year olds run the London Marathon the fastest, almost 10 minutes faster than the senior competitors (18-39 year olds).</p>
 
@@ -55,7 +55,7 @@
 <p>Whether it’s down to experience or taking the challenge more seriously, it’s good news for people nearing 40 who still want a shot at beating their PB.</p>
 
 <hr class="my-4">
-<p id="centre"><em>One final note: the over 70’s (all 234 of them) may have had the slowest times on average, but who can judge? Especially when 15 of them completed the marathon in under 4 hours - an impressive feat and target time for many people in their twenties. Let’s give them a round of applause.</em> </p>
+<p id="centre"><em>One final note: the over 70’s (all 234 of them) may have had the slowest times on average, but who can judge? Especially when 15 of them completed the marathon in under 4 hours - an impressive feat and target time for most people in their twenties! Let’s give them a round of applause.</em> </p>
 
 <button id="myBtn" type="button" class="btn btn-danger">Applause!</button>
 <div id="myModal" class="modal">
@@ -105,11 +105,29 @@
 </div>
 
         <div class='row'>
-<div id="mapdata"></div>
+<div class="map" id="mapdata"></div>
 </div>
 
-       
-                
+<div class='row'>
+    <div id="countryblock">
+    <h3>Who are the fastest and the slowest countries?</h3>
+    <p class='lead'>Out of those countries with more than 10 participants, these are the speed demons and slow coaches.</p>
+   
+    <input type="button" onClick="graph()" class="btn btn-danger" id="fast">Fastest</button>
+    <input type="button" onClick="graph()" class="btn btn-danger" id="slow">Slowest</button>
+</div>
+ &nbsp;
+
+ <div class='show' style="height: 700px; max-width: 800px; margin-left: 260px; margin-top: 50px margin-bottom: 50px" id='countryspeed'></div>
+    <div class='hidden' style="height: 700px; max-width: 800px; margin-left: 260px; margin-top: 50px " id='countryslow'></div>
+
+</div>
+ &nbsp;
+  &nbsp;                
+
+
+
+
         </div>
     </div>
 </div>
