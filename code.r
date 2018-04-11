@@ -99,6 +99,10 @@ londondata <- data.cleaner
 londondata %>%
     mutate(seconds = period_to_seconds(hms(Finish)))
 
+#scrape the span titles
+clubs <- url %>%
+     read_html() %>%
+     html_nodes(xpath = '//span/@title')
 
 #Get String function
 getstr = function(mystring, initial.character, final.character)
