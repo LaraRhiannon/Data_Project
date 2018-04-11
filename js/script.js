@@ -1,5 +1,3 @@
-
-//Highcharts Graph
 $(function() {
   var myChart = Highcharts.chart('container', {
     chart: {
@@ -52,7 +50,7 @@ $(function() {
 });
 
 
-//Highmaps
+
 var timedata = [
   ["al","1"  ],
   ["ad","1"  ],
@@ -180,7 +178,7 @@ colors: ['#ffcccc', '#ff6666', '#ff1a1a',
 
 });
 
-//dropdown function
+
 function message() {
    var whichAge = document.getElementById("exampleSelect1");
    var age = whichAge.options[whichAge.selectedIndex].value;
@@ -291,24 +289,162 @@ if(age == "3") {
 
 }
 
-//popup
+// Get the modal
 var modal = document.getElementById('myModal');
 
+// Get the button that opens the modal
 var btn = document.getElementById("myBtn");
 
+// Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
-
+// When the user clicks on the button, open the modal
 btn.onclick = function() {
     modal.style.display = "block";
 }
 
+// When the user clicks on <span> (x), close the modal
 span.onclick = function() {
     modal.style.display = "none";
 }
 
+// When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
 } 
+
+
+
+$(function() {
+  var myChart = Highcharts.chart('countryspeed', {
+    chart: {
+      type: 'column',
+    },
+
+    xAxis: {
+      categories: ["Austria", "Poland", "Spain", "Brazil", "Finland", "Slovakia", "Ireland", "Russia", "Iceland", "Czechia"]
+  },
+
+    title: {
+      text: 'The Fastest and Slowest Countries',
+    },
+
+    series: [{
+      name: "Time",
+      data: [12767000, 12854000, 13404000, 13512000, 13522000, 13827000, 13889000, 13960000, 13968000, 13998000]
+
+    }],
+
+
+    yAxis: {
+      floor: 0,
+      title: {
+        text: 'Median Finish Time',
+      },
+      type: 'datetime',
+      dateTimeLabelFormats: {
+                  millisecond: '%H:%M:%S.%L',
+                  second: '%H:%M:%S',
+                  minute: '%H:%M',
+                  hour: '%H:%M',
+                  day: '%e. %b',
+                  week: '%e. %b',
+                  month: '%b \'%y',
+                  year: '%Y'
+                },
+
+    },
+    plotOptions: {
+        series: {
+            color: ' #cc0000'
+        }
+    },
+    
+     tooltip: {
+        formatter: function () {
+            return 'The average time for <b>' + this.x +
+                '</b> is <b>' + Highcharts.dateFormat('%H:%M:%S',(this.y)) + '</b>';
+        }
+      },
+  });
+});
+
+$(function() {
+  var myChart = Highcharts.chart('countryslow', {
+    chart: {
+      type: 'column',
+    },
+
+    xAxis: {
+      categories: ["South Korea", "China", "New Zealand", "Great Britain", "USA", "Norway", "India", "Jersey", "Canada", "Hong Kong"]
+  },
+
+    title: {
+      text: 'The Fastest and Slowest Countries',
+    },
+
+    series: [{
+      name: "Time",
+      data: [17817000, 16570000, 16336000, 16163000, 15908000, 15596000, 15545000, 15360000, 15216000, 15216000]
+    }],
+
+
+    yAxis: {
+      floor: 0,
+      title: {
+        text: 'Median Finish Time',
+      },
+      type: 'datetime',
+      dateTimeLabelFormats: {
+                  millisecond: '%H:%M:%S.%L',
+                  second: '%H:%M:%S',
+                  minute: '%H:%M',
+                  hour: '%H:%M',
+                  day: '%e. %b',
+                  week: '%e. %b',
+                  month: '%b \'%y',
+                  year: '%Y'
+                },
+
+    },
+
+    plotOptions: {
+        series: {
+            color: '#000099'
+        }
+    },
+    
+     tooltip: {
+        formatter: function () {
+            return 'The average time for <b>' + this.x +
+                '</b> is <b>' + Highcharts.dateFormat('%H:%M:%S',(this.y)) + '</b>';
+        }
+      },
+  });
+});
+
+
+var fastGraph = document.getElementById('countryspeed');
+
+// Get the button that opens the modal
+var fastbtn = document.getElementById("fast");
+
+var slowGraph = document.getElementById('countryslow');
+
+// Get the button that opens the modal
+var slowbtn = document.getElementById("slow");
+
+fastbtn.onclick = function() {
+     document.getElementById("countryspeed").className = "show";
+    document.getElementById("countryslow").className = "hidden";
+}
+
+slowbtn.onclick = function() {
+    document.getElementById("countryslow").className = "show";
+    document.getElementById("countryspeed").className = "hidden";
+}
+
+
+
