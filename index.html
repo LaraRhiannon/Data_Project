@@ -23,27 +23,92 @@
 
                         <div class="bs-component">
                             <div class="jumbotron">
-                                <h1 class="display-3">When is the best age to run the London Marathon?</h1>
+                                <h1 class="display-3">What is the best age to run the London Marathon?</h1>
                                 <p class="lead">You might assume that the best age to run the marathon is while you're still young, spritely and aren't complaining about your knees - but an analysis of the 2017 London Marathon results suggests that veterans could have an edge.</p>
                                 <div id="container" style="height: 700px; max-width: 800px; margin-left: 230px; margin-top: 50px"></div>
 
                                 <hr class="my-4">
-                                <p>Write stuff about why this is the case.</p>
-                                
+                                <p>Veteran runners may well have some advantage over the youth of the marathon.</p>
+
+<p>The data reveals that, on average, 40-44 year olds run the London Marathon the fastest, almost 10 minutes faster than the senior competitors (18-39 year olds).</p>
+
+<p>Those runners just into their 40’s run the marathon in an average time of 4:19:46. In comparison, the youngest age category have an average time of 4:28:54 - slower than 40-44, 45-49, 50-54 and 54-59 year olds, who just edge in faster with 4:28:47.</p>
+
+<p>A further drill down into the results reveal that 18-39 year olds have the broadest range of times (I feel for the one poor soul who took over 9 hours to complete the 26 miles). More of them were fast, over 1000 achieved sub-3 hour marathons compared to the near 500 runners in the 40-44 age category, but more of them were slow too. A fair-sized handful (309) took over 7 hours to get round, compared to 98 of the 40-44 year olds. </p>
+
+<p>The results are perhaps surprising. A feat of endurance like a marathon is for young people, right?</p>
+
+<p>Bernie Jones, seasoned runner and coach, thinks not for a number of reasons, including the fact that experience plays a vital role.</p>
+
+<p>He said: “There’s no doubt that experience of marathon running helps.</p>
+
+<p>“Running a marathon is all about keeping an even pace. The more experienced runners tend to know this and therefore set off at the right one. They don’t tend to get carried away too early and pay for it in the later stages.”</p>
+
+<p>A 2:24 marathoner himself, Bernie has coached and advised many athletes to marathon success all the way up to Commonwealth level and is not ignorant of the dedication it takes to get a good time: “Most serious runners would have a background of consistent running before then doing a 16 week build up for a marathon.</p>
+
+<p>“When I did it, I did up to 100 miles per week.</p>
+
+<p>“We have a culture now where everything has to be done yesterday and everyone wants a quick win. Younger people are less likely to put the hard work in that’s required [for a fast time].”</p>
+
+<p>The difference could also be down to the number of charity runners and bucket-listers opting in to do the marathon. Bernie said: “A lot of younger people want to tick the marathon off the list and don’t necessarily train properly or for as long as they should. There are likely to be less people over 40 who’d just give it a go willy nilly.”</p>
+
+<p>Whether it’s down to experience or taking the challenge more seriously, it’s good news for people nearing 40 who still want a shot at beating their PB.</p>
+
+<hr class="my-4">
+<p id="centre"><em>One final note: the over 70’s (all 234 of them) may have had the slowest times on average, but who can judge? Especially when 15 of them who completed the marathon in under 4 hours - an impressive feat and target time for most people in their twenties! Let’s give them a round of applause.</em> </p>
+
+<button id="myBtn" type="button" class="btn btn-danger">Applause!</button>
+<div id="myModal" class="modal">
+    <div class="modalContent">
+        <span class ="close">&times;</span>
+<img id="applause" src="https://media.giphy.com/media/HjheuybfwDGnu/giphy.gif"/>
+    </div>
+</div>
                             </div>
                         </div>
+    <div class="inline"> 
+    <form name="ageform">
+    <label for="exampleSelect1">Take a deeper look at how your age category did.</label>   
+    <select class="form-control" id="exampleSelect1">
+                                            <option value="" disabled selected>Select Age Category</option>
+                                            <option value="1">18-39</option>
+                                            <option value="2">40-44</option>
+                                            <option value="3">45-49</option>
+                                            <option value="4">50-54</option>
+                                            <option value="5">55-59</option>
+                                            <option value="6">60-64</option>
+                                            <option value="7">65-69</option>
+                                            <option value="8">70+</option>
+                                            <input type="button" value="Go" onClick="message()">
+                                        </select>
+   </form>
+   </div>
+
+
+<img class="hidden" id="70+" src="https://ourpaperdata.files.wordpress.com/2018/04/701.png" width = "800" />
+<img class="hidden" id="65-69" src="https://ourpaperdata.files.wordpress.com/2018/04/65-691.png" width="800"/>
+<img class="hidden" id="60-64" src="https://ourpaperdata.files.wordpress.com/2018/04/60-641.png" width="800"/>
+<img class="hidden" id="55-59" src="https://ourpaperdata.files.wordpress.com/2018/04/55-591.png" width="800"/>
+<img class="hidden" id="50-54" src="https://ourpaperdata.files.wordpress.com/2018/04/50-541.png" width="800"/>
+<img class="hidden" id="45-49" src="https://ourpaperdata.files.wordpress.com/2018/04/45-491.png" width="800"/>
+<img class="hidden" id="40-44" src="https://ourpaperdata.files.wordpress.com/2018/04/40-441.png" width="800"/>
+<img class="hidden" id="18-39" src="https://ourpaperdata.files.wordpress.com/2018/04/18-391.png" width="800"/>
+<img class="show" id="all" src="https://ourpaperdata.files.wordpress.com/2018/04/all-ages1.png" width="800"/>
+
+<div class='row'>
+    <div class="textBlock">
+        <h3>46,152 people had places on the start line last year. 40,109 made it to the finish line. But where do all they all come from?</h3>
+         &nbsp;
+        <p class="lead">Unsurprisingly, the UK. The vast majority of finishers, 35,154, were from Great Britain.</p>
+        <p class="lead">But there were some running tourists too - 655 Americans joined the Brits for the gruelling 26.2miles and 188 people flew halfway across the world from Australia and New Zealand.</p>
+    </div>
+</div>
 
         <div class='row'>
-
 <div id="mapdata"></div>
 </div>
 
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="bs-component">
-                    <h1>How did you do?</h1>
-                    <p class="lead">Find out how your goal time compares to the rest of the field.</p>
-
+       
                 
         </div>
     </div>
@@ -65,3 +130,4 @@
         <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
     </body>
 </html>
+
