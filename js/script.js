@@ -1,3 +1,5 @@
+
+//Highcharts Graph
 $(function() {
   var myChart = Highcharts.chart('container', {
     chart: {
@@ -50,7 +52,7 @@ $(function() {
 });
 
 
-
+//Highmaps
 var timedata = [
   ["al","1"  ],
   ["ad","1"  ],
@@ -139,17 +141,33 @@ Highcharts.mapChart('mapdata', {
         }
     },
 
-    colorAxis: {
-            min: 1,
-            max: 35154,
-            type: 'logarithmic',
-            maxColor: '#b30000',
-            minColor: '#ffb3b3',
-        },
+colors: ['#ffcccc', '#ff6666', '#ff1a1a',
+                '#cc0000', '#990000', '#4d0000'],
+            colorAxis: {
+              dataClassColor: 'category',
+            dataClasses: [{
+                    to: 20
+                }, {
+                    from: 20,
+                    to: 50
+                }, {
+                    from: 50,
+                    to: 100
+                }, {
+                    from: 100,
+                    to: 400
+                }, {
+                    from: 400,
+                    to: 1000
+                },  {
+                    from: 1000
+                }]
+            },
+        
 
     series: [{
         data: timedata,
-        name: 'Time',
+        name: 'Runners',
         joinby: 'hc-key',
         mapData: Highcharts.maps['custom/world'],
         states: {
@@ -159,4 +177,138 @@ Highcharts.mapChart('mapdata', {
         },
         
     }]
+
 });
+
+//dropdown function
+function message() {
+   var whichAge = document.getElementById("exampleSelect1");
+   var age = whichAge.options[whichAge.selectedIndex].value;
+
+   if(age == "1") {
+
+    document.getElementById("70+").className = "hidden";
+    document.getElementById("65-69").className = "hidden";
+    document.getElementById("60-64").className = "hidden";
+    document.getElementById("55-59").className = "hidden";
+    document.getElementById("50-54").className = "hidden";
+    document.getElementById("45-49").className = "hidden";
+    document.getElementById("40-44").className = "hidden";
+    document.getElementById("18-39").className = "show";
+    document.getElementById("all").className = "hidden";
+   }
+
+   if(age == "2") {
+
+    document.getElementById("70+").className = "hidden";
+    document.getElementById("65-69").className = "hidden";
+    document.getElementById("60-64").className = "hidden";
+    document.getElementById("55-59").className = "hidden";
+    document.getElementById("50-54").className = "hidden";
+    document.getElementById("45-49").className = "hidden";
+    document.getElementById("40-44").className = "show";
+    document.getElementById("18-39").className = "hidden";
+    document.getElementById("all").className = "hidden";
+   }
+
+if(age == "3") {
+
+    document.getElementById("70+").className = "hidden";
+    document.getElementById("65-69").className = "hidden";
+    document.getElementById("60-64").className = "hidden";
+    document.getElementById("55-59").className = "hidden";
+    document.getElementById("50-54").className = "hidden";
+    document.getElementById("45-49").className = "show";
+    document.getElementById("40-44").className = "hidden";
+    document.getElementById("18-39").className = "hidden";
+    document.getElementById("all").className = "hidden";
+   }
+
+   if(age == "4") {
+
+    document.getElementById("70+").className = "hidden";
+    document.getElementById("65-69").className = "hidden";
+    document.getElementById("60-64").className = "hidden";
+    document.getElementById("55-59").className = "hidden";
+    document.getElementById("50-54").className = "show";
+    document.getElementById("45-49").className = "hidden";
+    document.getElementById("40-44").className = "hidden";
+    document.getElementById("18-39").className = "hidden";
+    document.getElementById("all").className = "hidden";
+   }
+
+   if(age == "5") {
+
+    document.getElementById("70+").className = "hidden";
+    document.getElementById("65-69").className = "hidden";
+    document.getElementById("60-64").className = "hidden";
+    document.getElementById("55-59").className = "show";
+    document.getElementById("50-54").className = "hidden";
+    document.getElementById("45-49").className = "hidden";
+    document.getElementById("40-44").className = "hidden";
+    document.getElementById("18-39").className = "hidden";
+    document.getElementById("all").className = "hidden";
+   }
+
+   if(age == "6") {
+
+    document.getElementById("70+").className = "hidden";
+    document.getElementById("65-69").className = "hidden";
+    document.getElementById("60-64").className = "show";
+    document.getElementById("55-59").className = "hidden";
+    document.getElementById("50-54").className = "hidden";
+    document.getElementById("45-49").className = "hidden";
+    document.getElementById("40-44").className = "hidden";
+    document.getElementById("18-39").className = "hidden";
+    document.getElementById("all").className = "hidden";
+   }
+
+   if(age == "7") {
+
+    document.getElementById("70+").className = "hidden";
+    document.getElementById("65-69").className = "show";
+    document.getElementById("60-64").className = "hidden";
+    document.getElementById("55-59").className = "hidden";
+    document.getElementById("50-54").className = "hidden";
+    document.getElementById("45-49").className = "hidden";
+    document.getElementById("40-44").className = "hidden";
+    document.getElementById("18-39").className = "hidden";
+    document.getElementById("all").className = "hidden";
+   }
+
+   if(age == "8") {
+
+    document.getElementById("70+").className = "show";
+    document.getElementById("65-69").className = "hidden";
+    document.getElementById("60-64").className = "hidden";
+    document.getElementById("55-59").className = "hidden";
+    document.getElementById("50-54").className = "hidden";
+    document.getElementById("45-49").className = "hidden";
+    document.getElementById("40-44").className = "hidden";
+    document.getElementById("18-39").className = "hidden";
+    document.getElementById("all").className = "hidden";
+   }
+
+}
+
+//popup
+var modal = document.getElementById('myModal');
+
+var btn = document.getElementById("myBtn");
+
+var span = document.getElementsByClassName("close")[0];
+
+
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+} 
