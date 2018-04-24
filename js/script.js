@@ -328,7 +328,7 @@ $(function() {
   },
 
     title: {
-      text: 'The Fastest and Slowest Countries',
+      text: 'The Fastest Countries',
     },
 
     series: [{
@@ -382,7 +382,7 @@ $(function() {
   },
 
     title: {
-      text: 'The Fastest and Slowest Countries',
+      text: 'The Slowest Countries',
     },
 
     series: [{
